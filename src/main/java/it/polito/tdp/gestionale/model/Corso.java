@@ -1,5 +1,9 @@
 package it.polito.tdp.gestionale.model;
 
+import java.util.List;
+
+import it.polito.tdp.gestionale.db.DidatticaDAO;
+
 public class Corso extends Nodo {
 
 	private String codins;
@@ -7,6 +11,8 @@ public class Corso extends Nodo {
 	private int crediti;
 	private int pd;
 
+	private List <Studente> studentiCorso;
+	
 	public Corso(String codins, int crediti, String nome, int pd) {
 		this.codins = codins;
 		this.crediti = crediti;
@@ -57,6 +63,14 @@ public class Corso extends Nodo {
 	@Override
 	public String toString() {
 		return "Corso [codins=" + codins + ", nome=" + nome + ", crediti=" + crediti + ", pd=" + pd + "]";
+	}
+
+	public List <Studente> getStudentiCorso() {
+		return studentiCorso;
+	}
+
+	public void setStudentiCorso(List <Studente> studentiCorso) {
+		this.studentiCorso = studentiCorso;
 	}
 
 }
